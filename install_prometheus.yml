@@ -1,0 +1,13 @@
+- name: Install prometheus
+  hosts: prometheus
+
+  tasks:
+    - name: Git clone dockprom
+      git:
+        repo: https://github.com/stefanprodan/dockprom
+        dest: dockprom
+
+    - name: Start prometheus
+      shell:
+        cmd: ADMIN_USER=admin ADMIN_PASSWORD=admin docker-compose up -d
+        chdir: dockprom

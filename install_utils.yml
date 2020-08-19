@@ -1,0 +1,16 @@
+- name: Install utils
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Update repositories cache
+      apt:
+        update_cache: yes
+
+    - name: Install a list of packages
+      apt:
+        pkg:
+          - htop
+          - ranger
+          - vim
+          - git

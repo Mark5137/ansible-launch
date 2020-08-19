@@ -1,0 +1,2 @@
+gitlab ansible_host=192.168.33.50 ansible_user=vagrant
+prometheus ansible_host=192.168.33.51 ansible_user=vagrant
